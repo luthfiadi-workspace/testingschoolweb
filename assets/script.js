@@ -26,6 +26,14 @@
         toggle.classList.remove("open");
       });
     });
+    drawer.querySelectorAll(".mob-toggle").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var sub = btn.nextElementSibling;
+        var open = sub.classList.toggle("open");
+        btn.classList.toggle("open", open);
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    });
   }
 
   /* ---- News carousel ---- */
